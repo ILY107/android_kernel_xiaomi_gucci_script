@@ -1,5 +1,5 @@
-#building custom kernel using xiaomi official source 
-
+#building custom kernel using unofficial source based on lollipop/marshmallow/naught/oreo. 
+#same kernel source for all versions except kitkat
 cd
 
 #Tool chain
@@ -16,13 +16,13 @@ export CROSS_COMPILE=$(pwd)/arm-eabi-4.8/bin/arm-eabi-
 
 mkdir out
 
-#cloning xiaomi offical kernel
+#cloning unoffical kernel
 
-git clone https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git -b gucci-kk-oss
+git clone https://github.com/Wzedlare/android_kernel_xiaomi_msm8916.git -b lineage-15.1
 
 #Changing directory to kernel directory
 
-cd Xiaomi_Kernel_OpenSource-gucci-kk-oss
+cd android_kernel_xiaomi_msm8916
 
 #Compiling kernel
 
@@ -33,4 +33,3 @@ make ARCH=arm O=../out gucci_defconfig
 make ARCH=arm O=../out -j4
 
 #the final zimage (Compiled Kernel) will be in home/out/arc/arm/boot/
-
